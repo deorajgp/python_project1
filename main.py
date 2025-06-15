@@ -1,6 +1,8 @@
-import random.randint
+import random
 import helpers.general_utils
-import helper.math_utils
+from helpers.math_utils import *
+from helpers.general_utils import *
+from typing import List
 """
 check even odd condition based on the result of given function and do ammendments according to that
 
@@ -10,7 +12,7 @@ check even odd condition based on the result of given function and do ammendment
 nums = []
 
 #enter the size of nums
-while true:
+while True:
     try:
         size = input("Enter the size of list")
         size = int(size)
@@ -36,8 +38,12 @@ for func in functions:
     count = 0
     parity = parity_checker(func,nums_copy)
     while count<3 and parity==0: #no of times to append integer is 3 and we have to check till func generates even output
-        nums_copy.append(randint(1,100))
+        nums_copy.append(random.randint(1,100))
         parity = parity_checker(add,nums_copy)
     if parity == 1:
         temp = nums_copy
+    
+    print(f"executed {func.__name__}")
+
+print(f"final list {temp}")
         

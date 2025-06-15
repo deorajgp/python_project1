@@ -1,4 +1,5 @@
-import math.prod
+from typing import List
+import math
 
 """
 
@@ -15,4 +16,4 @@ def add(nums:List[int])->int:
 
 #function to perform multiplication of all the elements and return the result
 def mul(nums:List[int])->int:
-    return prod(nums)
+    return math.prod(nums)
