@@ -28,7 +28,7 @@ The project:
    - Multiplies all the numbers.
    - If the result is odd, appends numbers (up to 3 times) to try and reach an even product.
 4. Division:
-   - Divides the first number by the last number in the list (after modifications).
+   - Divides the first number by the last number in the final list.
 
 ---
 
