@@ -12,38 +12,36 @@ check even odd condition based on the result of given function and do ammendment
 nums = []
 
 #enter the size of nums
-while True:
-    try:
-        size = input("Enter the size of list")
-        size = int(size)
-        break
-    except ValueError:
-        print("Please enter an integer")
-
-#enter the elements of nums
-while len(nums)!=size:
-    try:
-        ele = input(f"Enter element number {len(nums) + 1}")
-        ele = int(ele)
-        nums.append(ele)
-    except ValueError:
-        print("Please enter an integer")
+take_input_of_n_integers(nums)
 
 
-functions = [add,mul,div]
+functions = [add,mul]
 temp = nums.copy()
 
+#executes the functions provided in functions line by line and checks if the result is even or odd
+#if odd it appends an integer from 1 to 9 and re-evaluates it max of 3 times
 for func in functions:
-    nums_copy = temp.copy()
     count = 0
-    parity = parity_checker(func,nums_copy)
+    print(f"executing {func.__name__}")
+    result =  parity_checker(func,temp)
+    print(f"result obtained {result[1]}")
+    parity = result[0] 
+
     while count<3 and parity==0: #no of times to append integer is 3 and we have to check till func generates even output
-        nums_copy.append(random.randint(1,100))
-        parity = parity_checker(add,nums_copy)
-    if parity == 1:
-        temp = nums_copy
+
+        temp.append(random.randint(1,10))
+        print(f"function generated odd result ... appended an integer {temp[-1]}")
+        result =  parity_checker(func,temp)
+        print(f"result obtained {result[1]}")
+        parity = result[0] 
+
+        count+=1
     
     print(f"executed {func.__name__}")
 
+final_result = div(temp)
+
+print(f"original list {nums}")
 print(f"final list {temp}")
+print(f"final result {final_result}")
         
