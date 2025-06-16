@@ -13,11 +13,14 @@ def parity_checker(func , nums:List[int])->List[int]:
     result = func(nums)
     return [result % 2 == 0 , result]
 
-def take_input_of_n_integers(nums:List[int]):
+def take_input_of_n_integers(nums:List[int],mn_size = 1):
     while True:
         try:
             size = input("Enter the size of list ")
             size = int(size)
+            if size<mn_size:
+                print("Atleast size 2 must be provided")
+                continue
             break
         except ValueError:
             print("Please enter an integer ")
