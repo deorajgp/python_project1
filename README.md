@@ -5,7 +5,7 @@ This Python project processes a list of numbers with a sequence of operations �
 ---
 
 ## 📂 Folder Structure
-
+```
 Python_project1/
 ├── helpers/
 │ ├── general_utils.py
@@ -13,6 +13,7 @@ Python_project1/
 ├── main.py
 ├── .gitignore
 └── README.md
+```
 
 ---
 
