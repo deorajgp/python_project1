@@ -30,7 +30,7 @@ while len(nums)!=size:
         print("Please enter an integer")
 
 
-functions = [add,mul]
+functions = [add,mul,div]
 temp = nums.copy()
 
 for func in functions:
