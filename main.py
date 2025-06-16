@@ -12,7 +12,7 @@ check even odd condition based on the result of given function and do ammendment
 nums = []
 
 #enter the size of nums
-take_input_of_n_integers(nums)
+take_input_of_n_integers(nums,2)
 
 
 functions = [add,mul]
