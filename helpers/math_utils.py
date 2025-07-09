@@ -19,7 +19,4 @@ def mul(nums:list[int])->int:
 
 #function to perform division of first number with last number
 def div(nums:list[int])->int:
-    if nums[-1] == 0:
-        raise ValueError("Cant divide by zero as last number is zero")
-    
     return nums[0]//nums[-1]
