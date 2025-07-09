@@ -2,9 +2,7 @@
 
 This Python project processes a list of numbers with a sequence of operations — summation, multiplication, and division — with custom rules for handling odd results.
 
----
-
-## 📂 Folder Structure
+## Folder Structure
 ```
 Python_project1/
 ├── helpers/
@@ -15,13 +13,11 @@ Python_project1/
 └── README.md
 ```
 
----
-
-## 🧠 Project Overview
+## Project Overview
 
 The project:
 
-1. Accepts a list of numbers (atleast 2) through a function .
+1. Accepts a list of numbers (atleast 2) through a function and the last number entered must not be zero.
 2. Summation:
    - Sums all the numbers.
    - If the sum is odd, appends numbers (up to 3 times) to try and reach an even sum.
@@ -33,7 +29,7 @@ The project:
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. **Clone the repository**: 
 
@@ -47,4 +43,9 @@ cd Python_project1
 ```bash
 python main.py
 ```
+## Libraries used
 
+1. random:
+   - to generate random number in case the result of addition or division is odd
+2. math:
+   - to sum and multiply elements
