@@ -1,10 +1,9 @@
 import random
-import helpers.general_utils
 from helpers.math_utils import *
 from helpers.general_utils import *
-from typing import List
 """
-check even odd condition based on the result of given function and do ammendments according to that
+check even odd condition based on the result of given function and do append to rerun that function til a particular parity is reached 
+in this case even
 
 """
 
@@ -43,5 +42,4 @@ final_result = div(temp)
 
 print(f"original list {nums}")
 print(f"final list {temp}")
-print(f"final result {final_result}")
-        
+print(f"final result {final_result}") 

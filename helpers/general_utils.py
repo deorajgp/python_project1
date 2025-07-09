@@ -31,22 +31,18 @@ def take_input_of_n_integers(nums:List[int],mn_size = 1):
 
             #enter the elements of nums
             while len(nums)!=size:
-                try:
-                    ele = input(f"Enter element number {len(nums) + 1} ")
-                    ele = int(ele)
-                    nums.append(ele)
-                except ValueError as e:
-                    print("Please enter an integer ")
+                ele = input(f"Enter element number {len(nums) + 1} ")
+                ele = int(ele)
+                nums.append(ele)
+
             #This part uses sleep function from time module in python for enhanced user experience       
             #https://www.programiz.com/python-programming/time/sleep
             while nums[-1]==0:
                 print("The last number cannot be zero so plzz enter something different")
                 time.sleep(2)
-                try:
-                    ele = input("Enter the last number")
-                    ele = int(ele)
-                    nums.append(ele)
-                except ValueError:
-                    print("Please enter an integer ")
+                ele = input("Enter the last number")
+                ele = int(ele)
+                nums.append(ele)
+                
         except ValueError as e:
                 raise e
