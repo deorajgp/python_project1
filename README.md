@@ -49,3 +49,5 @@ python main.py
    - to generate random number in case the result of addition or division is odd
 2. math:
    - to sum and multiply elements
+3. time:
+   - for better user experience

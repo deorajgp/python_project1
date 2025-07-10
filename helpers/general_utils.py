@@ -3,6 +3,8 @@
 general utility functions 
 
 """
+import random
+import time
 
 # returns parity of a function func after calling it on a list
 # if the result of calling the function is even parity is 1 else 0
@@ -48,3 +50,35 @@ def take_input_of_n_integers(nums:list[int],mn_size = 1):
 
         except ValueError as e:
                 print(e)
+
+#executes the functions provided in functions line by line and checks if the result is even or odd
+#if odd it appends an integer from 1 to 9 and re-evaluates it max of 3 times
+
+def recurred_function(functions:list,temp:list,par:int)->int:
+    for func in functions[:-1]:
+        count = 0
+        print(f"executing {func.__name__}")
+        result =  parity_checker(func,temp)
+        time.sleep(1)
+        print(f"result obtained {result[1]}")
+        parity = result[0] 
+        time.sleep(1)
+
+        while count<3 and parity==par: #no of times to append integer is 3 and we have to check till func generates even output
+
+            temp.append(random.randint(1,10))
+            print(f"function generated odd result ... appended an integer {temp[-1]}")
+            time.sleep(1)
+            result =  parity_checker(func,temp)
+            print(f"result obtained {result[1]}")
+            time.sleep(1)
+            parity = result[0] 
+
+            count+=1
+        
+        print(f"executed {func.__name__}")
+        time.sleep(1)
+    print(f"executing final function {functions[-1].__name__}")
+    time.sleep(1)
+    final_result = functions[-1](temp)
+    return final_result

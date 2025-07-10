@@ -1,4 +1,3 @@
-import random
 from helpers.math_utils import *
 from helpers.general_utils import *
 """
@@ -14,32 +13,11 @@ nums = []
 take_input_of_n_integers(nums,2)
 
 
-functions = [add,mul]
+functions = [add,mul,div]
 temp = nums.copy()
 
-#executes the functions provided in functions line by line and checks if the result is even or odd
-#if odd it appends an integer from 1 to 9 and re-evaluates it max of 3 times
-for func in functions:
-    count = 0
-    print(f"executing {func.__name__}")
-    result =  parity_checker(func,temp)
-    print(f"result obtained {result[1]}")
-    parity = result[0] 
-
-    while count<3 and parity==0: #no of times to append integer is 3 and we have to check till func generates even output
-
-        temp.append(random.randint(1,10))
-        print(f"function generated odd result ... appended an integer {temp[-1]}")
-        result =  parity_checker(func,temp)
-        print(f"result obtained {result[1]}")
-        parity = result[0] 
-
-        count+=1
-    
-    print(f"executed {func.__name__}")
-
-final_result = div(temp)
+result = recurred_function(functions,temp,0)#functions contain list of functions and  temp is list of numbers and 0 is parity
 
 print(f"original list {nums}")
 print(f"final list {temp}")
-print(f"final result {final_result}") 
+print(f"final result {result}") 
