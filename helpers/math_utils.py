@@ -12,7 +12,6 @@ helper functions to perform on the array of integers
 def add(nums:list[int])->int:
     return sum(nums)
 
-
 #function to perform multiplication of all the elements and return the result
 def mul(nums:list[int])->int:
     return math.prod(nums)
